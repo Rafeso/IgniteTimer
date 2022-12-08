@@ -86,7 +86,7 @@ export const Separator = styled.div`
   justify-content: center;
 `
 
-export const StartContDownButton = styled.button`
+export const BaseContDownButton = styled.button`
   width: 100%;
   border: 0;
   padding: 1rem;
@@ -101,15 +101,26 @@ export const StartContDownButton = styled.button`
 
   cursor: pointer;
 
-  background: ${(props) => props.theme['green-500']};
   color: ${(props) => props.theme['gray-100']};
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.7;
   }
+`
+
+export const StartContDownButton = styled(BaseContDownButton)`
+  background: ${(props) => props.theme['green-500']};
 
   &:not(:disabled):hover {
     background: ${(props) => props.theme['green-700']};
+  }
+`
+
+export const StopContDownButton = styled(BaseContDownButton)`
+  background: ${(props) => props.theme['red-500']};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['red-700']};
   }
 `
